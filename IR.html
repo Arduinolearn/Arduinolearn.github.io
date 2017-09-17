@@ -87,35 +87,8 @@
 
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
-			<h2>LDR-Light Dependent Resistor</h2>
-           <p><b>Overview</b></p>
-		   <img src="images/ldr1.png" alt="Smiley face" style="vertical-align:middle">
-           <p> LDR  that allow you to detect light. They are small, inexpensive, low-power, easy to use and don't wear out. For that reason they often appear in toys, gadgets and appliances. LDR is  basically a resistor that changes its resistive value (in ohms Ω) depending on how much light is shining onto the squiggly face. They are very low cost, easy to get in many sizes and specifications.</p>
-            <p><b>Working of LDR</b></p>
-			 <img src="images/ldr.gif" alt="Smiley face" style="vertical-align:middle">
-			 <p> LDR is basically a resistor that change resistance depending upon the intensity of  light falling on it. When the light intensity increases the semiconductor layer gets excited leading to the generation of charge carries hence better conduction that means lower resistance. </p>
-
-           <p><b>Interface with Arduino</b></p>
-           <p>Bread Board Layout</p>
-            <img src="images/img1.png" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-            <p><b>Arduino Code<b></p>
-            <pre>
-const int ldr = 0;    //A0 assigned as LDR pin.
-int value = 0;        //Store values from LDR.
-
-void setup()
-{
-  Serial.begin(9600);   //Fix serial baud rate at 9600bps
-}
-
-void loop()
-{
-  value = analogRead(ldr);    //Read the analog values from LDR.
-  Serial.println(value);      //Print to serial monitor.
-  delay(250);                 //Delay of 250 milliseconds (1/4th of a second).
-}
-</pre>
-<p><a href="LM35.html">Next : Temperature Sensor - LM35 </a></p>
+			
+<p><a href="motor.html">Next :Connection with Motor </a></p>
 
 			
 									

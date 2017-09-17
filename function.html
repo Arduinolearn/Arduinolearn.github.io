@@ -88,6 +88,50 @@
 			<div class="fh5co-narrow-content">
 			
 
+ <h2>Functions</h2>
+<p>A function is a set of instructions, grouped together to perform some specific task. In Arduino programming, we already have two functions <b> loop () </b> and <b>setup () </b>. These are the unavoidable thing in Arduino code.
+<h4>Structure of a function</h4>
+<p>The following code is an example of a function that was created to print a dashed line in the Arduino IDE.</p>
+<pre>
+void Connection()  // "void" refers return type and “Connection” refers to function name
+{
+    Serial.println("----------------");
+}
+</pre>
+<p>The code above that creates the function is called the function definition.</p>
+<b><p>Function Name</b></p>
+<p>When we create a function, it must be given a name. The naming convention for functions is the same as for variables:</p>
+<ul>
+<li>The function name can be made up of alphanumeric characters (A to Z; a to z; 0 to 9) and the underscore (_).</li>
+<li>The function name may not start with a number i.e. the numbers 0 to 9.</li>
+<li>A function name must not be used that is the same as a language keyword or existing function.</li>
+</ul>
+<p>The function name ends with parentheses (). Nothing is passed to the example function above, so the parentheses are empty. Passing values or parameters to functions will be explained later in this tutorial.</p>
+<b><p>Return Type</b></p>
+<p>A function must have a return type. The example function does not return anything, so has a return type of void. Returning a value from a function will be explained in the next part of this course.</p>
+<b><p>Function Body</b></p>
+<p>The function body is made up of statements placed between braces {}. The statements make up the functionality of the function (what the function will do when it is called).When a function is used, it is said to be "called". We will look at how to call a function next.</p>
+<h4>Calling a Function</h4>
+<pre>
+void setup() {
+  Serial.begin(9600);
+  
+  Connection(); // calling the function
+  Serial.println("| Program Menu |");
+  }
+
+void loop() {
+}
+
+void DashedLine()   // declaring the function
+{
+  Serial.println("----------------");
+}
+
+</pre>
+	
+
+
 <p><a href="interaction.html">Next : Interactions</a></p>
 
 			</div>
