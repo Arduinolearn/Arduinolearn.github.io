@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Learn Arduino</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+  	<!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	-->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+	<div id="fh5co-page">
+		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+
+			<h1 id="fh5co-logo"><a href="index.html">Arduino</a></h1>
+			<nav id="fh5co-main-menu" role="navigation">
+				<ul>
+					<li><a href="index.html">Start with Arduino</a></li>
+					<li ><a href="programming.html">Basics of Programming</a></li>
+					<li><a href="interaction.html">Interaction</a></li>
+					<li><a href="sensor.html">Sensors</a></li>
+					<li><a href="display.html">Dispalys</a></li>
+					<li class="fh5co-active"><a href="motor.html">Motors</a></li>
+					<li><a href="communication.html">Wireless Communication</a></li>
+					<li><a href="storage.html">Storage</a></li>
+					<li><a href="prototype.html">Protoyping Using Arduino</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			</aside>
+
+		<div id="fh5co-main">
+			<div class="fh5co-narrow-content">
+			<h2>Servo Motor</h2>
+<h4>Overview</h4>
+<p>This is nothing but a simple electrical motor, controlled with the help of servomechanism. If the motor as controlled device, associated with servomechanism is DC motor, then it is commonly known . If the controlled motor is operated by AC, it is called AC Servo Motor.</p>
+<p>You can connect small servo motors directly to an Arduino to control the shaft position very precisely. Because servo motors use feedback to determine the position of the shaft, you can control that position very precisely. As a result, servo motors are used to control the position of objects, rotate objects, move legs, arms or hands of robots, move sensors etc. with high precision. Servo motors are small in size, and because they have built-in circuitry to control their movement, they can be connected directly to an Arduino.</p>
+<p>Most servo motors have the following three connections: </p>
+ <ul>
+<li>Black/Brown ground wire. (GND) </li>
+<li>Red power wire (around 5V). </li>
+<li>Yellow or White PWM wire.</li>
+</ul>
+<h4>Interface with Arduino</h4>
+     <img src="images/servo1.png" alt="Smiley face" style="vertical-align:middle">
+<b><p>Servo Misbehaves</P></b>
+<p>Your servo may behave erratically, and you may find that this only happens when the Arduino is plugged into certain USB ports. This is because the servo draws quite a lot of power, especially as the motor is starting up, and this sudden high demand can be enough to drop the voltage on the Arduino board, so that it resets itself.If this happens, then you can usually cure it by adding a high value capacitor (470uF or greater) between GND and 5V on the breadboard. </p>
+<p>The capacitor acts as a reservoir of electricity for the motor to use, so that when it starts, it takes charge from the capacitor as well as the Arduino supply. The longer lead of the capacitor is the positive lead and this should be connected to 5V. </p>
+negative lead is also often marked with a '-' symbol.
+<h4>Arduino Code</h4>
+<pre>
+#include &ltServo.h&gt
+int servoPin = 9;
+Servo servo;
+int angle = 0; // servo position in degrees
+void setup()
+{
+servo.attach(servoPin);
+}
+void loop()
+{
+// scan from 0 to 180 degrees
+for(angle = 0; angle < 180; angle++)
+{
+servo.write(angle);
+delay(15);
+}
+// now scan back from 180 to 0 degrees
+for(angle = 180; angle > 0; angle--)
+{
+servo.write(angle);
+delay(15);
+}
+}
+</pre>
+<p><a href="stepper.html">Next :Stepper Motor</a></p>	
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	
+	
+	<!-- MAIN JS -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
+
