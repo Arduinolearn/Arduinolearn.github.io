@@ -50,8 +50,8 @@
 					<li ><a href="index.html"><font color="#484f44 ">About this Website</a></li></font>
           <li ><a href="arduino.html"><font color="#484f44 ">Introduction to Arduino</a></li></font>
 					<li><a href="electronics.html"><font color=" #484f44 ">Basics of Electronics</a></li></font>
-          <li ><a href="programming.html"><font color="#484f44 ">Basics of Programming</a></li></font>
-					<li class="fh5co-active"><a href="interaction.html"><font color="#484f44 ">Interaction With Ardunio</a></li></font>
+          <li class="fh5co-active"><a href="programming.html"><font color="#484f44 ">Basics of Programming</a></li></font>
+					<li><a href="interaction.html"><font color="#484f44 ">Interaction With Ardunio</a></li></font>
 					<li><a href="sensor1.html"><font color="#484f44 ">Interface with Sensors-1</a></li></font>
 					<li><a href="display.html"><font color="#484f44 ">Interface with Dispalys</a></li></font>
           <li><a href="communication.html"><font color="#484f44 ">Wireless Communication</a></li></font>
@@ -65,43 +65,60 @@
 			</aside>
 			<div id="fh5co-main">
 			<div class="fh5co-narrow-content"><font color="#484f44 ">
-				<h3>Push Button Switch</h3>
-            <h4>Overview</h4>
-			<p>Pushbuttons or switches connect two points in a circuit when you press them. This example turns on the built-in LED on pin 13 when you press the button.</p>
-			   <h4>How to Connect with Arduino  </h4>
-			 <p>Bread Board Layout</p>
-			 <img src="images/button.png" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-			<p>Connect three wires to the board. The first two, green and red, connect to the two long vertical rows on the side of the breadboard to provide access to the 5 volt supply and ground. The third wire goes from digital pin 2 to one leg of the pushbutton. That same leg of the button connects through a pull-down resistor (here 10K ohm) to ground. The other leg of the button connects to the 5 volt supply.</p>
-             <p>When the pushbutton is open (unpressed) there is no connection between the two legs of the pushbutton, so the pin is connected to ground (through the pull-down resistor) and we read a LOW. When the button is closed (pressed), it makes a connection between its two legs, connecting the pin to 5 volts, so that we read a HIGH.</p>
-             <p>You can also wire this circuit the opposite way, with a pullup resistor keeping the input HIGH, and going LOW when the button is pressed. If so, the behavior of the sketch will be reversed, with the LED normally on and turning off when you press the button.</p>
-             <p>If you disconnect the digital I/O pin from everything, the LED may blink erratically. This is because the input is "floating" - that is, it will randomly return either HIGH or LOW. That's why you need a pull-up or pull-down resistor in the circuit.</p>
+				<h3>Data Types</h3>
+<p>Each variable in C has an associated data type. Each data type requires different amounts of memory and has some specific operations which can be performed over it. Let us briefly describe them one by one: </p>
 
+<p>Following are the examples of some very common data types used in arduino programming:</p>
 
-
-   <h4>Arduino Code-Button Read  </h4>
- <pre>
-const int buttonPin = 2;     // the number of the pushbutton pin
-const int ledPin =  13;      // the number of the LED pin
-int buttonState = 0;         // variable for reading the pushbutton status
-void setup() {
-
-  pinMode(ledPin, OUTPUT);  // initialize the LED pin as an output:
-  pinMode(buttonPin, INPUT);   // initialize the pushbutton pin as an input:
-}
-
-void loop() {
-    buttonState = digitalRead(buttonPin);  // read the state of the pushbutton value:
-   if (buttonState == HIGH)   // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
-    {
-       digitalWrite(ledPin, HIGH);   // turn LED on:
-    } else
-	 {
-     digitalWrite(ledPin, LOW);     // turn LED off:
-     }
-}
+<h4>byte</h4>
+				<p>Byte stores an 8-bit numerical value without decimal points. They have a range of 0-255.</p>
+<pre>
+byte someVariable = 180; // declares 'someVariable'  as a byte type
 </pre>
-<p><a href="pot.html">Next : Potentiometer Analog Read</a></p>
-									</div>
+<h4>int</h4>
+ <p>Integers are the primary datatype for storage of numbers without decimal points and store a 16-bit    value with a range of 32,767 to -32,768.</p>
+<pre>
+int someVariable = 1500; // declares 'someVariable' as an integer type
+</pre>
+<p><b>Note: </b>Integer variables will roll over if forced past their maximum or minimum values
+by an assignment or comparison. For example, if x = 32767 and a subsequent statement adds 1 to x, x = x + 1 or x++, x will then rollover and equal -32,768. </p>
+
+<h4>long</h4>
+ <p> Extended size datatype for long integers, without decimal points, stored in a 32-bit value with a range of 2,147,483,647 to -2,147,483,648.</p>
+<pre>
+long someVariable = 90000; // declares 'someVariable'as a long type
+</pre>
+<h4>float</h4>
+			<p>A datatype for floating-point numbers, or numbers that have a decimal point. Floating-
+point numbers have greater resolution than integers and are stored as a 32-bit value
+with a range of 3.4028235E+38 to -3.4028235E+38.</p>
+
+<pre>float someVariable = 3.14; // declares 'someVariable'as a floating-point type</pre>
+
+<p><b>Note: </b>Floating-point numbers are not exact, and may yield strange results when compared. Floating point math is also much slower than integer math in performing calculations, so should be avoided if possible.</p>
+
+<h4>arrays</h4>
+<p>An array is a collection of values that are accessed with an index number. Any value
+in the array may be called upon by calling the name of the array and the index
+number of the value. Arrays are zero indexed, with the first value in the array
+beginning at index number 0. An array needs to be declared and optionally assigned
+values before they can be used. </p>
+<pre>
+int myArray[] = {value0, value1, value2...}
+int myArray[5]; // declares integer array w/ 6 positions
+myArray[3] = 10;  // assigns the 4th index the value 10
+</pre>
+<h4>char </h4>
+<p>A data type that takes up 1 byte of memory that stores a character value. Character literals are written in single quotes, like this: 'A' (for multiple characters - strings - use double quotes: "ABC"). </p>
+
+<pre>
+char myChar = 'A';
+char myChar = 65;      // both are equivalent
+</pre>
+<p><b>Note: </b>The char datatype is a signed type, meaning that it encodes numbers from -128 to 127. For an unsigned, one-byte (8 bit) data type, use the byte data type. </p>
+<p><a href="loop.html">Next : Loops</a></p>
+
+							</div>
 		</div>
 	</div>
 

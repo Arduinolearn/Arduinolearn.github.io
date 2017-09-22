@@ -50,9 +50,9 @@
 					<li ><a href="index.html"><font color="#484f44 ">About this Website</a></li></font>
           <li ><a href="arduino.html"><font color="#484f44 ">Introduction to Arduino</a></li></font>
 					<li><a href="electronics.html"><font color=" #484f44 ">Basics of Electronics</a></li></font>
-          <li ><a href="programming.html"><font color="#484f44 ">Basics of Programming</a></li></font>
-					<li class="fh5co-active"><a href="interaction.html"><font color="#484f44 ">Interaction With Ardunio</a></li></font>
-					<li><a href="sensor1.html"><font color="#484f44 ">Interface with Sensors-1</a></li></font>
+          <li><a href="programming.html"><font color="#484f44 ">Basics of Programming</a></li></font>
+					<li><a href="interaction.html"><font color="#484f44 ">Interaction With Ardunio</a></li></font>
+					<li class="fh5co-active"><a href="sensor1.html"><font color="#484f44 ">Interface with Sensors-1</a></li></font>
 					<li><a href="display.html"><font color="#484f44 ">Interface with Dispalys</a></li></font>
           <li><a href="communication.html"><font color="#484f44 ">Wireless Communication</a></li></font>
 					<li><a href="robotics.html"><font color="#484f44 ">Ardunio Robotics</a></li></font>
@@ -65,43 +65,33 @@
 			</aside>
 			<div id="fh5co-main">
 			<div class="fh5co-narrow-content"><font color="#484f44 ">
-				<h3>Push Button Switch</h3>
-            <h4>Overview</h4>
-			<p>Pushbuttons or switches connect two points in a circuit when you press them. This example turns on the built-in LED on pin 13 when you press the button.</p>
-			   <h4>How to Connect with Arduino  </h4>
-			 <p>Bread Board Layout</p>
-			 <img src="images/button.png" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-			<p>Connect three wires to the board. The first two, green and red, connect to the two long vertical rows on the side of the breadboard to provide access to the 5 volt supply and ground. The third wire goes from digital pin 2 to one leg of the pushbutton. That same leg of the button connects through a pull-down resistor (here 10K ohm) to ground. The other leg of the button connects to the 5 volt supply.</p>
-             <p>When the pushbutton is open (unpressed) there is no connection between the two legs of the pushbutton, so the pin is connected to ground (through the pull-down resistor) and we read a LOW. When the button is closed (pressed), it makes a connection between its two legs, connecting the pin to 5 volts, so that we read a HIGH.</p>
-             <p>You can also wire this circuit the opposite way, with a pullup resistor keeping the input HIGH, and going LOW when the button is pressed. If so, the behavior of the sketch will be reversed, with the LED normally on and turning off when you press the button.</p>
-             <p>If you disconnect the digital I/O pin from everything, the LED may blink erratically. This is because the input is "floating" - that is, it will randomly return either HIGH or LOW. That's why you need a pull-up or pull-down resistor in the circuit.</p>
+				<h3>PIR Sensor - HC-SR501</h3>
+		           <h4>Overview</h4>
+				    <img src="images/PIR3.png" alt="Smiley face" style="vertical-align:middle">
+				   <p>PIR sensor which is also known as Pyroelectric sensor or Passive Infrared Sensor is basically an electronic sensor employed in motion detecting applications. A PIR sensor detects or measures IR (Infra-Red) radiations emitted by any object inside its field of view. A PIR sensor is generally known to the world as motion sensor or motion detector.</p>
+				   <h4>Working of LDR</h4>
+					 <img src="images/PIR2.png" alt="Smiley face" style="vertical-align:middle">
+					 <p>The PIR sensor itself has two slots in it, each slot is made of a special material that is sensitive to IR. The lens used here is not really doing much and so we see that the two slots can 'see' out past some distance (basically the sensitivity of the sensor). When the sensor is idle, both slots detect the same amount of IR, the ambient amount radiated from the room or walls or outdoors. When a warm body like a human or animal passes by, it first intercepts one half of the PIR sensor, which causes a positive differential change between the two halves. When the warm body leaves the sensing area, the reverse happens, whereby the sensor generates a negative differential change. These change pulses are what is detected.</p>
 
 
-
-   <h4>Arduino Code-Button Read  </h4>
- <pre>
-const int buttonPin = 2;     // the number of the pushbutton pin
-const int ledPin =  13;      // the number of the LED pin
-int buttonState = 0;         // variable for reading the pushbutton status
+		           <h4>Interface with Arduino</h4>
+		           <img src="images/PIR.png" alt="Smiley face" style="vertical-align:middle">
+				   <p>The PIR sensor module has got only one digital output mode. So it has only 2 possible output values – either a HIGH or a LOW.  By default, standards, when there is no object inside the range of PIR sensor it outputs a LOW value or 0V at output. When an object is identified inside the range of PIR sensor it immediately outputs a HIGH value or +5V at output.</p>
+				    <h4>Arduino Code</h4>
+		            <pre>
+int inputPin = 7;               // choose the input pin (for PIR sensor)
+int val = 0;                    // variable for reading the pin status
 void setup() {
-
-  pinMode(ledPin, OUTPUT);  // initialize the LED pin as an output:
-  pinMode(buttonPin, INPUT);   // initialize the pushbutton pin as an input:
+    pinMode(inputPin, INPUT);     // declare sensor as input
+    Serial.begin(9600);
 }
-
-void loop() {
-    buttonState = digitalRead(buttonPin);  // read the state of the pushbutton value:
-   if (buttonState == HIGH)   // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
-    {
-       digitalWrite(ledPin, HIGH);   // turn LED on:
-    } else
-	 {
-     digitalWrite(ledPin, LOW);     // turn LED off:
-     }
-}
-</pre>
-<p><a href="pot.html">Next : Potentiometer Analog Read</a></p>
-									</div>
+ void loop(){
+ val = digitalRead(inputPin);
+ Serial.println(val);
+ }
+		</pre>
+		<p><a href="ultra.html">Next : Ultra Sonic Sensor - HC-SR04  </a></p>
+			</div>
 		</div>
 	</div>
 

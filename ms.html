@@ -50,8 +50,8 @@
 					<li ><a href="index.html"><font color="#484f44 ">About this Website</a></li></font>
           <li ><a href="arduino.html"><font color="#484f44 ">Introduction to Arduino</a></li></font>
 					<li><a href="electronics.html"><font color=" #484f44 ">Basics of Electronics</a></li></font>
-          <li ><a href="programming.html"><font color="#484f44 ">Basics of Programming</a></li></font>
-					<li class="fh5co-active"><a href="interaction.html"><font color="#484f44 ">Interaction With Ardunio</a></li></font>
+          <li class="fh5co-active"><a href="programming.html"><font color="#484f44 ">Basics of Programming</a></li></font>
+					<li><a href="interaction.html"><font color="#484f44 ">Interaction With Ardunio</a></li></font>
 					<li><a href="sensor1.html"><font color="#484f44 ">Interface with Sensors-1</a></li></font>
 					<li><a href="display.html"><font color="#484f44 ">Interface with Dispalys</a></li></font>
           <li><a href="communication.html"><font color="#484f44 ">Wireless Communication</a></li></font>
@@ -65,43 +65,37 @@
 			</aside>
 			<div id="fh5co-main">
 			<div class="fh5co-narrow-content"><font color="#484f44 ">
-				<h3>Push Button Switch</h3>
-            <h4>Overview</h4>
-			<p>Pushbuttons or switches connect two points in a circuit when you press them. This example turns on the built-in LED on pin 13 when you press the button.</p>
-			   <h4>How to Connect with Arduino  </h4>
-			 <p>Bread Board Layout</p>
-			 <img src="images/button.png" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-			<p>Connect three wires to the board. The first two, green and red, connect to the two long vertical rows on the side of the breadboard to provide access to the 5 volt supply and ground. The third wire goes from digital pin 2 to one leg of the pushbutton. That same leg of the button connects through a pull-down resistor (here 10K ohm) to ground. The other leg of the button connects to the 5 volt supply.</p>
-             <p>When the pushbutton is open (unpressed) there is no connection between the two legs of the pushbutton, so the pin is connected to ground (through the pull-down resistor) and we read a LOW. When the button is closed (pressed), it makes a connection between its two legs, connecting the pin to 5 volts, so that we read a HIGH.</p>
-             <p>You can also wire this circuit the opposite way, with a pullup resistor keeping the input HIGH, and going LOW when the button is pressed. If so, the behavior of the sketch will be reversed, with the LED normally on and turning off when you press the button.</p>
-             <p>If you disconnect the digital I/O pin from everything, the LED may blink erratically. This is because the input is "floating" - that is, it will randomly return either HIGH or LOW. That's why you need a pull-up or pull-down resistor in the circuit.</p>
-
-
-
-   <h4>Arduino Code-Button Read  </h4>
+				<h4>delay(ms) </h4>
+ <p>Pauses a program for the amount of time as specified in milliseconds, where 1000
+ equals 1 second.</p>
  <pre>
-const int buttonPin = 2;     // the number of the pushbutton pin
-const int ledPin =  13;      // the number of the LED pin
-int buttonState = 0;         // variable for reading the pushbutton status
-void setup() {
+ delay(1000); // waits for one second
+  </pre>
+ <h4>millis()</h4>
 
-  pinMode(ledPin, OUTPUT);  // initialize the LED pin as an output:
-  pinMode(buttonPin, INPUT);   // initialize the pushbutton pin as an input:
-}
-
-void loop() {
-    buttonState = digitalRead(buttonPin);  // read the state of the pushbutton value:
-   if (buttonState == HIGH)   // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
-    {
-       digitalWrite(ledPin, HIGH);   // turn LED on:
-    } else
-	 {
-     digitalWrite(ledPin, LOW);     // turn LED off:
-     }
-}
+ <p>Returns the number of milliseconds since the Arduino board began running the
+ current program as an unsigned long value.</p>
+ <pre>
+ value = millis();  // sets ‘value’ equal to millis()
+ </pre>
+ <p><b>Note: </b>This number will overflow (reset back to zero), after approximately 9 hours.</p>
+  <h4>map()</h4>
+ <p>This function is used to change covert a value in particular range to other range. for example if we read a value from analogport A0 is 25, its betwwena range of 0-1023 in oder to cover value of analog port A0 to range of 0-255 we use map function</p>
+ <pre>
+map(value, fromLow, fromHigh, toLow, toHigh)
+// example
+analogValue = map(analogValue, 0, 1023, 0, 255);
 </pre>
-<p><a href="pot.html">Next : Potentiometer Analog Read</a></p>
-									</div>
+<h4>random()</h4>
+<p>The random() function returns a semi-random number up to the parameters specified. If no parameters are specified, it will return a value in the signed long data type, with a range of -2,147,483,648 to 2,147,483,647. Its syntax follows: </p>
+<pre>
+	random(min, max)   // "min" minimum possible value expected from the random()
+                  	//  "max" maximum value expected from the random()
+function
+</pre>
+				<p><a href="interaction.html">Next : Interaction with Arduino </a></p>
+
+							</div>
 		</div>
 	</div>
 

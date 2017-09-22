@@ -50,8 +50,8 @@
 					<li ><a href="index.html"><font color="#484f44 ">About this Website</a></li></font>
           <li ><a href="arduino.html"><font color="#484f44 ">Introduction to Arduino</a></li></font>
 					<li><a href="electronics.html"><font color=" #484f44 ">Basics of Electronics</a></li></font>
-          <li ><a href="programming.html"><font color="#484f44 ">Basics of Programming</a></li></font>
-					<li class="fh5co-active"><a href="interaction.html"><font color="#484f44 ">Interaction With Ardunio</a></li></font>
+          <li class="fh5co-active"><a href="programming.html"><font color="#484f44 ">Basics of Programming</a></li></font>
+					<li><a href="interaction.html"><font color="#484f44 ">Interaction With Ardunio</a></li></font>
 					<li><a href="sensor1.html"><font color="#484f44 ">Interface with Sensors-1</a></li></font>
 					<li><a href="display.html"><font color="#484f44 ">Interface with Dispalys</a></li></font>
           <li><a href="communication.html"><font color="#484f44 ">Wireless Communication</a></li></font>
@@ -65,43 +65,41 @@
 			</aside>
 			<div id="fh5co-main">
 			<div class="fh5co-narrow-content"><font color="#484f44 ">
-				<h3>Push Button Switch</h3>
-            <h4>Overview</h4>
-			<p>Pushbuttons or switches connect two points in a circuit when you press them. This example turns on the built-in LED on pin 13 when you press the button.</p>
-			   <h4>How to Connect with Arduino  </h4>
-			 <p>Bread Board Layout</p>
-			 <img src="images/button.png" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-			<p>Connect three wires to the board. The first two, green and red, connect to the two long vertical rows on the side of the breadboard to provide access to the 5 volt supply and ground. The third wire goes from digital pin 2 to one leg of the pushbutton. That same leg of the button connects through a pull-down resistor (here 10K ohm) to ground. The other leg of the button connects to the 5 volt supply.</p>
-             <p>When the pushbutton is open (unpressed) there is no connection between the two legs of the pushbutton, so the pin is connected to ground (through the pull-down resistor) and we read a LOW. When the button is closed (pressed), it makes a connection between its two legs, connecting the pin to 5 volts, so that we read a HIGH.</p>
-             <p>You can also wire this circuit the opposite way, with a pullup resistor keeping the input HIGH, and going LOW when the button is pressed. If so, the behavior of the sketch will be reversed, with the LED normally on and turning off when you press the button.</p>
-             <p>If you disconnect the digital I/O pin from everything, the LED may blink erratically. This is because the input is "floating" - that is, it will randomly return either HIGH or LOW. That's why you need a pull-up or pull-down resistor in the circuit.</p>
+				               <h3>Programming Structure</h3>
+				            <h4>Overview</h4>
+				            <p>The Arduino software is open-source. The source code for the Java environment is released under the GPL and the C/C++ microcontroller libraries are under the LGPL. <p>
+				            <b><p>Sketch </b>− The first new terminology is the Arduino program called “sketch”.</p>
+				            <b><p>Structure</b></p>
+				            <p>The basic structure of the Arduino program is of very simple and runs in at least two parts . These  two parts are <b> void setup() </b> and <b> void loop()</b>, both parts or functions are required for the working of the program which are enclosed in a statement.</p>
+ <pre>     void setup()   // put your setup code here, to run once:
+ {
+   }
+ void loop()        // put your main code here, to run repeatedly:
 
-
-
-   <h4>Arduino Code-Button Read  </h4>
- <pre>
-const int buttonPin = 2;     // the number of the pushbutton pin
-const int ledPin =  13;      // the number of the LED pin
-int buttonState = 0;         // variable for reading the pushbutton status
-void setup() {
-
-  pinMode(ledPin, OUTPUT);  // initialize the LED pin as an output:
-  pinMode(buttonPin, INPUT);   // initialize the pushbutton pin as an input:
-}
-
-void loop() {
-    buttonState = digitalRead(buttonPin);  // read the state of the pushbutton value:
-   if (buttonState == HIGH)   // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
-    {
-       digitalWrite(ledPin, HIGH);   // turn LED on:
-    } else
-	 {
-     digitalWrite(ledPin, LOW);     // turn LED off:
-     }
+ }
+ </pre>
+				                       <p>where setup() is for the preparation and loop() is the execution.Both functions are required for the program to work.</p>
+				                       <p>The setup function should follw the declaration of any variables at the very beginning of the program.It is the first function to run the program,is run only once and is used to set pinMode or initialize serial communication.</p>
+				                       <p>The loop function follows next and includes the code to be executed continously-reading inputs,triggering outputs etc.This function is the core of all Arduino programs and does the bulk of the work</p>
+				                       <p><b>setup()</b><p>
+				                       <p>The setup() function is called once when your program starts.use it to initialize pinmodes or begin serial.It must be included in aprogram even if there are statements to run.</p>
+<pre>
+void setup()
+{
+pinMode(pin,OUTPUT);  // sets the pin as output
 }
 </pre>
-<p><a href="pot.html">Next : Potentiometer Analog Read</a></p>
-									</div>
+                  <b><p>loop()</b><p>
+                  <p>After calling the setup() function, the loop() functiondoes precisely what ist name suggest and loops consecuitvely,allowing the program to change,respond and control the Arduino board.</P>
+<pre>
+void loop()
+{
+digitalWrite(pin,HIGH); // set outpur of pin as high
+}
+</pre>
+<p><a href="variable.html">Next : Variables</a></p>
+
+							</div>
 		</div>
 	</div>
 

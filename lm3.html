@@ -12,22 +12,6 @@
 	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FreeHTML5.co" />
-
-  	<!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FreeHTML5.co
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	-->
-
-  	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
 	<meta property="og:url" content=""/>
@@ -37,12 +21,10 @@
 	<meta name="twitter:image" content="" />
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
-
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+		<link rel="shortcut icon" href="favicon.ico">
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
-	
+
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -56,60 +38,56 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
 	</head>
 	<body>
 	<div id="fh5co-page">
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
 
-			<h1 id="fh5co-logo"><a href="index.html">Arduino</a></h1>
+			<h2 id="fh5co-logo"><a href="index.html"><font color=" #484f44 ">Arduino</a></h2></font>
 			<nav id="fh5co-main-menu" role="navigation">
 				<ul>
-					<li><a href="index.html">Start with Arduino</a></li>
-					<li ><a href="programming.html">Basics of Programming</a></li>
-					<li><a href="interaction.html">Interaction</a></li>
-					<li class="fh5co-active"><a href="sensor.html">Sensors</a></li>
-					<li><a href="display.html">Dispalys</a></li>
-					<li><a href="motor.html">Motors</a></li>
-					<li><a href="communication.html">Wireless Communication</a></li>
-					<li><a href="storage.html">Storage</a></li>
-					<li><a href="prototype.html">Protoyping Using Arduino</a></li>
-					<li><a href="project.html">Arduino Projects</a></li>
+					<li ><a href="index.html"><font color="#484f44 ">About this Website</a></li></font>
+          <li ><a href="arduino.html"><font color="#484f44 ">Introduction to Arduino</a></li></font>
+					<li><a href="electronics.html"><font color=" #484f44 ">Basics of Electronics</a></li></font>
+          <li><a href="programming.html"><font color="#484f44 ">Basics of Programming</a></li></font>
+					<li><a href="interaction.html"><font color="#484f44 ">Interaction With Ardunio</a></li></font>
+					<li class="fh5co-active"><a href="sensor1.html"><font color="#484f44 ">Interface with Sensors-1</a></li></font>
+					<li><a href="display.html"><font color="#484f44 ">Interface with Dispalys</a></li></font>
+          <li><a href="communication.html"><font color="#484f44 ">Wireless Communication</a></li></font>
+					<li><a href="robotics.html"><font color="#484f44 ">Ardunio Robotics</a></li></font>
+					<li><a href="internet.html"><font color="#484f44 ">Arduino Internet of Things</a></li></font>
+          <li><a href="sensors2.html"><font color="#484f44 ">Interface with Sensors-2</a></li></font>
+					<li><a href="prototype.html"><font color="#484f44 ">Protoyping and Making PCB</a></li></font>
+					<li><a href="project.html"><font color="#484f44 ">Arduino Projects</a></li></font>
 				</ul>
 			</nav>
-
-		</aside>
-
-		<div id="fh5co-main">
-			<div class="fh5co-narrow-content">
-			<h2>Temperature Sensor - LM35</h2>
+			</aside>
+			<div id="fh5co-main">
+			<div class="fh5co-narrow-content"><font color="#484f44 ">
+				<h2>Temperature Sensor - LM35</h2>
            <h4>Overview</h4>
 		   <p>LM35 is an analog, linear temperature sensor whose output voltage varies linearly with change in temperature. LM35 is three terminal linear temperature sensor from National semiconductors. It can measure temperature from -55 degree Celsius to +150 degree Celsius. The voltage output of the LM35 increases 10mV per degree Celsius rise in temperature. LM35 can be operated from a 5V supply and the stand by current is less than 60uA. </p>
 		   <h4>Interface with Arduino</h4>
 			 <p>Bread Board Layout</p>
 			 <img src="images/LM35.png" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
 			 <p>The +5v for LM35 can be taken from the +5v out pin of Arduino uno. Also the ground pin of LM35 can be connected to GND pin of Arduino uno. Connect Vout (the analog out of LM35) to any of the analog input pin of Arduino uno. In this circuit diagram, we have connected Vout of LM35 to A1 of Arduino.The temperature measured using LM 35 and given it to the Arduino. The measured temperature is displayed through serial monitor.</p>
-            
+
             <h4>Arduino Code</h4>
             <pre>
-float tempf;                      //variable to store temperature in Fahreinheit 
+float tempf;                      //variable to store temperature in Fahreinheit
 float vout;                      //temporary variable to hold sensor reading
 void setup()
 {
 pinMode(sensor,INPUT);           // Configuring pin A1 as input
 Serial.begin(9600);
 }
-void loop() 
+void loop()
 {
 vout=analogRead(sensor);
 vout=(vout*500)/1023;
 tempc=vout;                     // Storing value in Degree Celsius
-tempf=(vout*1.8)+32;            // Converting to Fahrenheit 
+tempf=(vout*1.8)+32;            // Converting to Fahrenheit
 Serial.print("in DegreeC=");
 Serial.print("\t");
 Serial.print(tempc);
@@ -118,16 +96,12 @@ Serial.print("in Fahrenheit=");
 Serial.print("\t");
 Serial.print(tempf);
 Serial.println();
-delay(1000);                     //Delay of 1 second for ease of viewing 
+delay(1000);                     //Delay of 1 second for ease of viewing
 }
 </pre>
-<p><a href="PIR.html">Next : PIR Sensor - HC-SR501 </a></p>
+<p><a href="pir.html">Next : PIR Sensor - HC-SR501 </a></p>
 
-			
-									
 			</div>
-		
-			
 		</div>
 	</div>
 
@@ -141,11 +115,10 @@ delay(1000);                     //Delay of 1 second for ease of viewing
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Flexslider -->
 	<script src="js/jquery.flexslider-min.js"></script>
-	
-	
+
+
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
 
 	</body>
 </html>
-

@@ -50,9 +50,9 @@
 					<li ><a href="index.html"><font color="#484f44 ">About this Website</a></li></font>
           <li ><a href="arduino.html"><font color="#484f44 ">Introduction to Arduino</a></li></font>
 					<li><a href="electronics.html"><font color=" #484f44 ">Basics of Electronics</a></li></font>
-          <li ><a href="programming.html"><font color="#484f44 ">Basics of Programming</a></li></font>
-					<li class="fh5co-active"><a href="interaction.html"><font color="#484f44 ">Interaction With Ardunio</a></li></font>
-					<li><a href="sensor1.html"><font color="#484f44 ">Interface with Sensors-1</a></li></font>
+          <li><a href="programming.html"><font color="#484f44 ">Basics of Programming</a></li></font>
+					<li><a href="interaction.html"><font color="#484f44 ">Interaction With Ardunio</a></li></font>
+					<li class="fh5co-active"><a href="sensor1.html"><font color="#484f44 ">Interface with Sensors-1</a></li></font>
 					<li><a href="display.html"><font color="#484f44 ">Interface with Dispalys</a></li></font>
           <li><a href="communication.html"><font color="#484f44 ">Wireless Communication</a></li></font>
 					<li><a href="robotics.html"><font color="#484f44 ">Ardunio Robotics</a></li></font>
@@ -65,43 +65,20 @@
 			</aside>
 			<div id="fh5co-main">
 			<div class="fh5co-narrow-content"><font color="#484f44 ">
-				<h3>Push Button Switch</h3>
-            <h4>Overview</h4>
-			<p>Pushbuttons or switches connect two points in a circuit when you press them. This example turns on the built-in LED on pin 13 when you press the button.</p>
-			   <h4>How to Connect with Arduino  </h4>
-			 <p>Bread Board Layout</p>
-			 <img src="images/button.png" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-			<p>Connect three wires to the board. The first two, green and red, connect to the two long vertical rows on the side of the breadboard to provide access to the 5 volt supply and ground. The third wire goes from digital pin 2 to one leg of the pushbutton. That same leg of the button connects through a pull-down resistor (here 10K ohm) to ground. The other leg of the button connects to the 5 volt supply.</p>
-             <p>When the pushbutton is open (unpressed) there is no connection between the two legs of the pushbutton, so the pin is connected to ground (through the pull-down resistor) and we read a LOW. When the button is closed (pressed), it makes a connection between its two legs, connecting the pin to 5 volts, so that we read a HIGH.</p>
-             <p>You can also wire this circuit the opposite way, with a pullup resistor keeping the input HIGH, and going LOW when the button is pressed. If so, the behavior of the sketch will be reversed, with the LED normally on and turning off when you press the button.</p>
-             <p>If you disconnect the digital I/O pin from everything, the LED may blink erratically. This is because the input is "floating" - that is, it will randomly return either HIGH or LOW. That's why you need a pull-up or pull-down resistor in the circuit.</p>
+				<h3> Sensors</h3>
+								<p>Sensors are the eyes and ears of machines,they provide environmental data to machines.A sensor is a device that covert physical parameters into a signal which can be measured electrically.Based on the output the sensors may be classified as Digital and Analog Sensors.</p>
+								<p>Sensors use as much of microcontroller processing power. consider your micro controllers processing power when deciding what and how many sensor to use.The Arduino is fast enough for our practical purpose.</p>
+				<h4>Sensors used along with Arduino</h4>
+								<div class="container">
+								<ul class="feature-icons">
+														<li><a href="ldr.html"> <font color="blue">Light Sensor - LDR</font></a></li>
+														<li><a href="lm3.html"><font color="blue">Temperature Sensor - LM35 </font></a></li>
+														<li><a href="pir.html"><font color="blue">PIR Sensor - HC-SR501</a></font> </li>
+														<li><a href="ultra.html"><font color="blue">Ultra Sonic Sensor - HC-SR04 </font></a></li>
+														<li><a href="ir.html"><font color="blue">IR SensoR </font></li>
+								   </ul>
 
-
-
-   <h4>Arduino Code-Button Read  </h4>
- <pre>
-const int buttonPin = 2;     // the number of the pushbutton pin
-const int ledPin =  13;      // the number of the LED pin
-int buttonState = 0;         // variable for reading the pushbutton status
-void setup() {
-
-  pinMode(ledPin, OUTPUT);  // initialize the LED pin as an output:
-  pinMode(buttonPin, INPUT);   // initialize the pushbutton pin as an input:
-}
-
-void loop() {
-    buttonState = digitalRead(buttonPin);  // read the state of the pushbutton value:
-   if (buttonState == HIGH)   // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
-    {
-       digitalWrite(ledPin, HIGH);   // turn LED on:
-    } else
-	 {
-     digitalWrite(ledPin, LOW);     // turn LED off:
-     }
-}
-</pre>
-<p><a href="pot.html">Next : Potentiometer Analog Read</a></p>
-									</div>
+			</div>
 		</div>
 	</div>
 

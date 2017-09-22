@@ -50,8 +50,8 @@
 					<li ><a href="index.html"><font color="#484f44 ">About this Website</a></li></font>
           <li ><a href="arduino.html"><font color="#484f44 ">Introduction to Arduino</a></li></font>
 					<li><a href="electronics.html"><font color=" #484f44 ">Basics of Electronics</a></li></font>
-          <li ><a href="programming.html"><font color="#484f44 ">Basics of Programming</a></li></font>
-					<li class="fh5co-active"><a href="interaction.html"><font color="#484f44 ">Interaction With Ardunio</a></li></font>
+          <li class="fh5co-active"><a href="programming.html"><font color="#484f44 ">Basics of Programming</a></li></font>
+					<li><a href="interaction.html"><font color="#484f44 ">Interaction With Ardunio</a></li></font>
 					<li><a href="sensor1.html"><font color="#484f44 ">Interface with Sensors-1</a></li></font>
 					<li><a href="display.html"><font color="#484f44 ">Interface with Dispalys</a></li></font>
           <li><a href="communication.html"><font color="#484f44 ">Wireless Communication</a></li></font>
@@ -65,43 +65,56 @@
 			</aside>
 			<div id="fh5co-main">
 			<div class="fh5co-narrow-content"><font color="#484f44 ">
-				<h3>Push Button Switch</h3>
-            <h4>Overview</h4>
-			<p>Pushbuttons or switches connect two points in a circuit when you press them. This example turns on the built-in LED on pin 13 when you press the button.</p>
-			   <h4>How to Connect with Arduino  </h4>
-			 <p>Bread Board Layout</p>
-			 <img src="images/button.png" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-			<p>Connect three wires to the board. The first two, green and red, connect to the two long vertical rows on the side of the breadboard to provide access to the 5 volt supply and ground. The third wire goes from digital pin 2 to one leg of the pushbutton. That same leg of the button connects through a pull-down resistor (here 10K ohm) to ground. The other leg of the button connects to the 5 volt supply.</p>
-             <p>When the pushbutton is open (unpressed) there is no connection between the two legs of the pushbutton, so the pin is connected to ground (through the pull-down resistor) and we read a LOW. When the button is closed (pressed), it makes a connection between its two legs, connecting the pin to 5 volts, so that we read a HIGH.</p>
-             <p>You can also wire this circuit the opposite way, with a pullup resistor keeping the input HIGH, and going LOW when the button is pressed. If so, the behavior of the sketch will be reversed, with the LED normally on and turning off when you press the button.</p>
-             <p>If you disconnect the digital I/O pin from everything, the LED may blink erratically. This is because the input is "floating" - that is, it will randomly return either HIGH or LOW. That's why you need a pull-up or pull-down resistor in the circuit.</p>
 
+		 <h3>Variables</h3>
 
+		 <p>A variable is a way of naming and storing a numerical value for later use by the program.A variable needs to be declared and optionally assigned to the value needing to be stored. The following code declares a variable called inputVariable and then assigns it the value obtained on analog input pin 0:</p>
+<pre>
+int inputVariable = 0; // declares a variable andassigns value of 0
 
-   <h4>Arduino Code-Button Read  </h4>
- <pre>
-const int buttonPin = 2;     // the number of the pushbutton pin
-const int ledPin =  13;      // the number of the LED pin
-int buttonState = 0;         // variable for reading the pushbutton status
-void setup() {
-
-  pinMode(ledPin, OUTPUT);  // initialize the LED pin as an output:
-  pinMode(buttonPin, INPUT);   // initialize the pushbutton pin as an input:
-}
-
-void loop() {
-    buttonState = digitalRead(buttonPin);  // read the state of the pushbutton value:
-   if (buttonState == HIGH)   // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
-    {
-       digitalWrite(ledPin, HIGH);   // turn LED on:
-    } else
-	 {
-     digitalWrite(ledPin, LOW);     // turn LED off:
-     }
-}
+inputVariable = analogRead(2); // set variable to value ofanalog pin 2
 </pre>
-<p><a href="pot.html">Next : Potentiometer Analog Read</a></p>
-									</div>
+
+		 <h4>variable declaration</h4>
+
+		 <P>All variables have to be declared before they can be used. Declaring a variable means defining its value type, as in int, long, float, etc., setting a specified name, and optionally assigning an initial value. This only needs to be done once in a program but the value can be changed at any time using arithmetic and various assignments. </p>
+
+		 <p>The following example declares that inputVariable is an int, or integer type, and that its initial value equals zero. This is called a simple assignment.</p>
+<pre>
+ int inputVariable = 0;
+</pre>
+
+		 <h4>variable scope</h3>
+		 ,p>A variable can be declared at the beginning of the program before void setup(),
+		 locally inside of functions, and sometimes within a statement block such as for loops.
+		 Where the variable is declared determines the variable scope, or the ability of certain
+		 parts of a program to make use of the variable.</p>
+
+		 <p>A <b>global variable</b> is one that can be seen and used by every function and statement in
+		 a program. This variable is declared at the beginning of the program, before the setup() function.
+
+		 <p>A <b>local variable</b> is one that is defined inside a function or as part of a for loop. It is
+		 only visible and can only be used inside the function in which it was declared.</p>
+<pre>
+int value;   // global variable : 'value' is visible to any function
+void setup()
+{
+// no setup needed
+}
+void loop()
+{
+for (int i=0; i<20;)
+{
+i++;
+}
+float f;       // local variable : 'f' is only visible inside loop
+}
+
+</pre>
+
+<p><a href="datatype.html">Next : Data Types</a></p>
+
+							</div>
 		</div>
 	</div>
 
