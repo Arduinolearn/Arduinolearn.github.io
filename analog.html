@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Learn Arduino</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+		<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	</head>
+	<body>
+	<div id="fh5co-page">
+		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+
+			<h2 id="fh5co-logo"><a href="index.html"><font color=" #484f44 ">Arduino</a></h2></font>
+			<nav id="fh5co-main-menu" role="navigation">
+				<ul>
+					<li ><a href="index.html"><font color="#484f44 ">About this Website</a></li></font>
+          <li ><a href="arduino.html"><font color="#484f44 ">Introduction to Arduino</a></li></font>
+					<li><a href="electronics.html"><font color=" #484f44 ">Basics of Electronics</a></li></font>
+          <li class="fh5co-active"><a href="programming.html"><font color="#484f44 ">Basics of Programming</a></li></font>
+					<li><a href="interaction.html"><font color="#484f44 ">Interaction With Ardunio</a></li></font>
+					<li><a href="sensor1.html"><font color="#484f44 ">Interface with Sensors-1</a></li></font>
+					<li><a href="display.html"><font color="#484f44 ">Interface with Dispalys</a></li></font>
+          <li><a href="communication.html"><font color="#484f44 ">Wireless Communication</a></li></font>
+					<li><a href="robotics.html"><font color="#484f44 ">Ardunio Robotics</a></li></font>
+					<li><a href="internet.html"><font color="#484f44 ">Arduino Internet of Things</a></li></font>
+          <li><a href="sensors2.html"><font color="#484f44 ">Interface with Sensors-2</a></li></font>
+					<li><a href="prototype.html"><font color="#484f44 ">Protoyping and Making PCB</a></li></font>
+					<li><a href="project.html"><font color="#484f44 ">Arduino Projects</a></li></font>
+				</ul>
+			</nav>
+			</aside>
+			<div id="fh5co-main">
+			<div class="fh5co-narrow-content"><font color="#484f44 ">
+				<h3> Analog Input-Output Functions</h3>
+              <p> An analog signal is one that can take on any number of values, unlike a digital signal which has only two values: HIGH and LOW. To measure the value of analog signals, the Arduino has a built-in analog-to-digital converter (ADC). The ADC turns the analog voltage into a digital value. The function that you use to obtain the value of an analog signal is analogRead(pin). This function converts the value of the voltage on an analog input pin and returns a digital value from 0 to 1023, relative to the reference value. The reference is 5V on most Arduino</p>
+
+            <h4> Function</h4>
+            <p>The Arduino functions associated with Analog signals that we will be using in this tutorial are</p>
+
+                    <ol>
+                        <li>analogWrite(pin_number,value)</li>
+                        <li>anlogRead(pin_number)</li>
+
+                    </ol>
+              <h4>analogWrite(pin_number,value)</h4>
+             <p>This function writes a analog value to a pin. Here in Arduino there are 6 Analog pins so use the same to  write Value . Value must be range of 0 to 1023</p>
+<pre>
+analogWrite(Analogpin,255);   //set Analogpin as  255
+</pre>
+
+			 <h4>analogRead(pin_number)</h4>
+<pre>
+int reads = analogRead(Analogpin);	//read the analog value on pin
+</pre>
+             <p>This function reads a analog value from a pin. Analogpin is the number of the analog I/O pin you want to read. This function returns  values from a range of 0 to 1023.</p>
+           <h4>Additonal Notes</h4>
+		   <p> The Arduino does not have a built-in digital-to-analog converter (DAC), but it can pulse-width modulate (PWM) a digital signal to achieve some of the functions of an analog output. The function used to output a PWM signal is analogWrite(pin, value). pin is the pin number used for the PWM output. value is a number proportional to the duty cycle of the signal. When value = 0, the signal is always off. When value = 255, the signal is always on. On most Arduino boards, the PWM function is available on pins 3, 5, 6, 9, 10, and 11. The frequency of the PWM signal on most pins is approximately 490 Hz. On the Uno and similar boards.</p>
+            <p>To map an analog input value, which ranges from 0 to 1023 to a PWM output signal, which ranges from 0 - 255, you can use the map(value, fromLow, fromHigh, toLow, toHigh) function. This function has five parameters, one is the variable in which the analog value is stored, while the others are 0, 1023, 0 and 255 respectively. </p>
+
+						<p><a href="ms.html">Next : Miscellaneous</a></p>
+
+
+							</div>
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+
+
+	<!-- MAIN JS -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
