@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Learn Arduino</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+		<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	</head>
+	<body>
+	<div id="fh5co-page">
+		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+
+			<h2 id="fh5co-logo"><a href="index.html"><font color=" #484f44 ">Arduino</a></h2></font>
+			<nav id="fh5co-main-menu" role="navigation">
+				<ul>
+					<li ><a href="index.html"><font color="#484f44 ">About this Website</a></li></font>
+          <li ><a href="arduino.html"><font color="#484f44 ">Introduction to Arduino</a></li></font>
+					<li><a href="electronics.html"><font color=" #484f44 ">Basics of Electronics</a></li></font>
+          <li><a href="programming.html"><font color="#484f44 ">Basics of Programming</a></li></font>
+					<li><a href="interaction.html"><font color="#484f44 ">Interaction With Ardunio</a></li></font>
+					<li><a href="sensor1.html"><font color="#484f44 ">Interface with Sensors-1</a></li></font>
+					<li><a href="display.html"><font color="#484f44 ">Interface with Dispalys</a></li></font>
+          <li class="fh5co-active"><a href="communication.html"><font color="#484f44 ">Wireless Communication</a></li></font>
+					<li ><a href="robotics.html"><font color="#484f44 ">Ardunio Robotics</a></li></font>
+					<li><a href="internet.html"><font color="#484f44 ">Arduino Internet of Things</a></li></font>
+          <li><a href="sensors2.html"><font color="#484f44 ">Interface with Sensors-2</a></li></font>
+					<li><a href="prototype.html"><font color="#484f44 ">Protoyping and Making PCB</a></li></font>
+					<li><a href="project.html"><font color="#484f44 ">Arduino Projects</a></li></font>
+				</ul>
+			</nav>
+			</aside>
+			<div id="fh5co-main">
+			<div class="fh5co-narrow-content"><font color="#484f44 ">
+				<h3>Bluetooth Module HC-05</h3>
+<p>HC‐05 module is an easy to use Bluetooth SPP (Serial Port Protocol) module,designed for transparent wireless serial connection setup.The HC-05 Bluetooth Module can be used in a Master or Slave configuration, making it a great solution for wireless communication.</p>
+<p>The Bluetooth module HC-05 is a MASTER/SLAVE module.By default the factory setting is SLAVE.The Role of the module (Master or Slave) can be configured only by AT COMMANDS.The slave modules cannot initiate a connection to another Bluetooth device, but can accept connections.Master module can initiate a connection to other devices.The user can use it simply for a serial port replacement to establish connection between MCU and GPS, PC to your embedded project.</p>
+<h4>Pin Description</h4>
+<p>The HC-05 Bluetooth Module has 6pins. They are as follows: </p>
+<b><p>ENABLE:  </b></p>
+<p>When enable is pulled LOW, the module is disabled which means the module will not turn on and it fails to communicate.When enable is left open or connected to 3.3V, the module is enabled i.e the module remains on and communication also takes place. </p>
+<b><p>Vcc:  </b></p>
+<p>Supply Voltage 3.3V to 5V </p>
+<b><p>GND:  </b></p>
+<p>Ground pin </p>
+<b><p>TXD & RXD:  <b><p>
+<p>These two pins acts as an UART interface for communication </p>
+<b><p>STATE:  </b></p>
+<p>It acts as a status indicator.When the module is <b>not connected to / paired </b>with any other bluetooth device,signal goes Low.At this low state,the <b>led flashes continuously </b>which denotes that the module is not paired with other device.When this module is<b> connected to/paired </b>with any other bluetooth device,the signal goes<b> High</b>.At this high state,the <b>led blinks with a constant delay </b>say for example 2s delay which indicates that the module is paired. </p>
+<b><p>BUTTON SWITCH:  <b><p>
+<p>This is used to switch the module into AT command mode.To enable AT command mode,press the button switch for a second.With the help of AT commands,the user can change the parameters of this module but only when the module is not paired with any other BT device.If the module is connected to any other bluetooth device, it starts to communicate with that device and fails to work in AT command mode.</p>
+<h4>Connect HC05 bluetooth module with Arduino Uno</h4>
+<p>As we know that Vcc and Gnd of the module goes to Vcc and Gnd of Arduino.The TXD pin goes to RXD pin of Arduino and RXD pin goes to TXD pin of Arduino i.e(digital pin 0 and 1).The user can use the on board Led.But here,Led is connected to digital pin 12 externally for betterment of the process.</p>
+<h4>Arduino  Sktech</h4>
+ <p>The program given below is the HC-05 bluetooth module program.This process is quite different from others since we are going to use android mobile to control and communicate with arduino.Here the bluetooth module acts as an interface between our mobile and Arduino board.Before getting into the execution process,follow the given procedure: </p>
+<ul>
+    First of all,the user should install an application called Bluetooth SPP PRO from the playstore which is a free application.
+<li>After installation,pair the bluetooth module to your mobile as like connecting one device to other using bluetooth.The default pairing code is 1234. </li>
+<li>Upload the given program to the Arduino Uno board.After uploading the code,unplug the USB from the arduino. </li>
+<li>Now use external power adapter to power the Uno board. </li>
+<li>The Bluetooth SPP PRO has three types of communication mode.Here Byte stream mode is used to communicate.So select that mode and give the input as 1,as soon as the input has given the led will turn on and for 0 led will turn off.</li>
+</ul>
+<pre>
+#include <SoftwareSerial.h>
+SoftwareSerial mySerial(0, 1);
+int ledpin=12;
+int Data;
+void setup()
+{
+mySerial.begin(9600);
+pinMode(ledpin,OUTPUT);
+}
+void loop()
+{
+   if (mySerial.available())
+{
+Data=mySerial.read();
+if(Data=='1')
+{
+  digitalWrite(ledpin,HIGH);
+  mySerial.println("LED On! ");
+  }
+else  if (Data=='0')
+{
+ digitalWrite(ledpin,LOW);
+  mySerial.println("LED Off! ");
+ }
+}
+}
+</pre>
+
+
+
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+
+
+	<!-- MAIN JS -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
