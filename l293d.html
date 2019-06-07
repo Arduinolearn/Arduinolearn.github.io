@@ -22,6 +22,15 @@
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
 		<link rel="shortcut icon" href="favicon.ico">
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141652068-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-141652068-1');
+		</script>
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
@@ -80,7 +89,7 @@
 <li>The remaining connections with respect to L293D IC are the power supply pins. L293D Motor Driver IC needs two types of power: one for its internal operations and other for driver channels that drive the motor. Pin 16 of L293D IC is the supply pin for internal operations and is connected to a 5V supply. Pin 8 of L293D IC is the supply for driving the motor and is connected to a 12V supply.</li>
 <li>Similarly, for controlling a second motor B, pin 9 is the Enable Pin, pins 10 and 15 are the control/input pins and Pins 11 and 14 are the output Pins.</li>
 </ul>
-    <img src="images/motor2.png" alt="Smiley face" style="vertical-align:middle">				
+    <img src="images/motor2.png" alt="Smiley face" style="vertical-align:middle">
 <p> The table shows which direction the motor will turn based on the control/input pins.</p>
 <h4> Arduino code</h4>
 <pre>
